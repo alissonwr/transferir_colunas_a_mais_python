@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferir Dados de Excel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transferir Dados de Excel</h1>
+        <form action="/transfer" method="post" enctype="multipart/form-data">
+            <label for="arquivo1">Escolha o primeiro arquivo Excel:</label>
+            <input type="file" id="arquivo1" name="arquivo1" required>
+            
+            <label for="arquivo2">Escolha o segundo arquivo Excel:</label>
+            <input type="file" id="arquivo2" name="arquivo2" required>
+            
+            <label for="coluna_comum_arquivo1">Nome da coluna comum no primeiro arquivo:</label>
+            <input type="text" id="coluna_comum_arquivo1" name="coluna_comum_arquivo1" required>
+            
+            <label for="coluna_comum_arquivo2">Nome da coluna comum no segundo arquivo:</label>
+            <input type="text" id="coluna_comum_arquivo2" name="coluna_comum_arquivo2" required>
+            
+            <input type="submit" value="Transferir Dados">
+        </form>
+    </div>
+</body>
+</html>
